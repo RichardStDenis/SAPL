@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Time-stamp: "precoloring.xml   November 2021" -->
+<Coloring version="1.0">
+   <Colors colors="brown,blue,gray,green,pink,red"/>
+   <Precoloring partialColoring="v1,red;v5,green"/>
+</Coloring>

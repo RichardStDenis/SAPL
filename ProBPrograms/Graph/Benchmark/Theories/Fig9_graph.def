@@ -1,0 +1,24 @@
+// A basic graph theory.
+// Author: Richard St-Denis, Universite de Sherbrooke, 2022.
+DEFINITIONS
+  Graph(g) == g'edges : g'vertices <-> g'vertices &
+              (g'edges /\ id(g'vertices)) = {} & g'edges = (g'edges)~;
+
+  Adjacent(g, v) == g'edges[{v}];
+  Degree(g, v) == card(Adjacent(g, v));
+  InducedSubgraph(g, V) ==
+    rec(vertices: V,
+        edges: {e_ | #(u_,v_).(u_ : V & v_ : V & e_ = (u_,v_) & e_ : g'edges)} );
+  SymClosure(E) == E \/ E~;
+
+  Clique(g, c) == c <: g'vertices &
+    !(u_, v_).(u_ : c & v_ : c - {u_} => (u_,v_) : g'edges);
+  Clique_(g, c) == Complete(InducedSubgraph(g, c));
+  MaximalClique(g, c) == Clique(g, c) &
+    not (#(u_).(u_ : g'vertices - c & !(v_).(v_ : c => (u_,v_) : g'edges)));
+  MaximumClique(g, c) == MaximalClique(g, c) &
+    not (#(c_).(MaximalClique(g, c_) & card(c) < card(c_)));
+  Complete(g) == !(v_).(v_ : g'vertices => Degree(g, v_) = card(g'vertices) - 1);
+  HandshakingLemma(g) == SIGMA(v_).(v_ : g'vertices | Degree(g, v_)) = card(g'edges);
+  Undirected(g) == not (#(v_).(v_ : g'vertices & v_ : Adjacent(g, v_))) &
+    !(u_, v_).((u_,v_) : g'edges => (v_,u_) : g'edges);
