@@ -1,0 +1,5 @@
+{
+ "name" : "coloring",
+ "colors" : ["blue", "brown", "gray", "green", "pink", "red"],
+ "partialColoring" : [["v1", "red"], ["v5", "green"]]
+}
