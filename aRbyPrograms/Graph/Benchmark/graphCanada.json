@@ -1,0 +1,15 @@
+{
+ "name" : "Canada",
+ "vertices" : ["AB","BC","MB","NB","NL","NS","NT","NU","ON","PE","QC","SK","YT"],
+ "edges" : [
+   ["AB", "BC"], ["AB", "NT"], ["AB", "SK"],
+   ["BC", "NT"], ["BC", "YT"],
+   ["MB", "NT"], ["MB", "NU"], ["MB", "ON"], ["MB", "SK"],
+   ["NB", "NS"], ["NB", "PE"], ["NB", "QC"],
+   ["NL", "NS"], ["NL", "NU"], ["NL", "PE"], ["NL", "QC"],
+   ["NS", "PE"],
+   ["NT", "NU"], ["NT", "SK"], ["NT", "YT"],
+   ["NU", "QC"], ["NU", "SK"],
+   ["ON", "QC"],
+   ["PE", "QC"] ]
+}
