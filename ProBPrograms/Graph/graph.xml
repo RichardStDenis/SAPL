@@ -1,0 +1,6 @@
+<?vml version="1.0" encoding="ISO-8859-1"?>
+<!-- Time-stamp: "graph.xml   November 2021" -->
+<Graph version="1.0">
+   <Vertex vertices="v1,v2,v3,v4,v5"/>
+   <Partial edges="v1,v2;v1,v3;v1,v4;v1,v5;v2,v3;v4,v5"/>
+</Graph>
